@@ -2,7 +2,9 @@ import './CrearButtonLista.css';
 
 function CrearButtonLista(props) {
     return (
-      <button className='crear-button-Lista'>Crear nueva tarea</button>
+      <button className='crear-button-Lista'
+      onClick={() => {console.log("cvggg")}}
+      >Crear nueva tarea</button>
     );
   }
 

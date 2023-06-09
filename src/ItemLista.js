@@ -1,11 +1,19 @@
 import './ItemLista.css';
+import React from 'react';
 
 function ItemLista(props) {
+
+  const [toggleTareas, settoggleTareas] = React.useState(props.terminado);
+
     return (
-      <li className={`item-lista ${props.terminado && "item-Lista-terminado"}`}>
-        <img className={`${!props.terminado && "ds-none"}`} src={require('./tilde.png')} alt=''/>
+      <li className={`item-lista ${toggleTareas && "item-Lista-terminado"}`}>
+        <div onClick={()=> settoggleTareas(!toggleTareas)}
+        className={`contenedor-tilde-lista ${toggleTareas && "tilde-animation"}`}>
+          <img className={`${!toggleTareas && "ds-none"}`} src={require('./tilde.png')} alt=''/>
+        </div>
         <p>{props.texto}</p>
-        <span>x</span>
+        <span onClick={()=> console.log("yghh")}
+        >x</span>
       </li>
     );
   }
