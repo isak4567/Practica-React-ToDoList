@@ -20,17 +20,35 @@ const defaultLista = [
 
 function App() {
 
+  // Lista Principal 
   const [lista, setlista] = React.useState(defaultLista);
 
   const numTareasTerminadas = lista.filter((ele) => !(ele.terminado)).length;
 
+  // Lista Buscada
   const [searchValue, setsSearchValue] = React.useState('');
   
   const searchList = lista.filter((elem)=> {
     return elem.text.toLowerCase().includes(searchValue.toLocaleLowerCase());
   });
 
+  // Funcion toggle de tareas 
+  const toggleTareas = (id) => {
+    const cLista = [...lista];
+    let indexToggleLista = cLista.findIndex((el)=> id === el.text);
+    cLista[indexToggleLista].terminado = !cLista[indexToggleLista].terminado;
+    setlista(cLista);
+  }
 
+   // Funcion delete de tareas
+  const deleteTareas = (id) => {
+    const cLista = [...lista];
+    let indexToggleLista = cLista.findIndex((el)=> id === el.text);
+    cLista.splice(indexToggleLista, 1)
+    setlista(cLista);
+  }
+
+  
   return (
     
     <>
@@ -40,7 +58,14 @@ function App() {
       <InputSeachLista searchValue={searchValue} setsSearchValue={setsSearchValue} />
 
       <UlLista>
-        {searchList.map((el)=> <ItemLista key={el.text} texto={el.text} terminado={el.terminado}/>)}
+        {searchList.map((el)=> {
+        return <ItemLista 
+        key={el.text} texto={el.text} 
+        terminado={el.terminado}
+        onToggle={()=> toggleTareas(el.text)}
+        onDelete={()=> deleteTareas(el.text)}
+        />
+        })}
       </UlLista>
 
       <CrearButtonLista />
