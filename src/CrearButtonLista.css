@@ -1,0 +1,21 @@
+.crear-button-Lista {
+    background-color: #EF27A6;
+    padding: 16px;
+    font-size: 20px;
+    margin: 16px 0;
+    margin-left: 43%;
+    border-radius: 4px;
+    border: 0;
+    color: #21e9fb;
+    transition: 0.3s all;
+}
+
+.crear-button-Lista:hover {
+    box-shadow: inset 0px 0px #30d1ed, 3px 3px #30d1ed, inset -1px -1px #30d1ed, inset 0px 0px #30d1ed;
+}
+
+.crear-button-Lista:active {
+    box-shadow: inset 1px 1px #30d1ed, 0px 0px #30d1ed, inset -1px -1px #30d1ed, inset 1px 1px #30d1ed;
+    color: #30d1ed;
+    background-color: #c32188;
+}

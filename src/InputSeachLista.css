@@ -1,0 +1,25 @@
+.input-search-Lista {
+    width: 40%;
+    height: 60px;
+    box-shadow: inset 3px 3px #30d1ed, inset -1px -1px #30d1ed;
+    background-color: #EF27A6;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin: 24px 0;
+    margin-left: 30%;
+    color: white;
+    font-size: 18px;
+    border: 0;
+    transition: 0.3s all;
+}
+
+.input-search-Lista:hover, .input-search-Lista:focus {
+    outline: 4px solid #30d1ed7e;
+    box-shadow: inset 30px 30px #30d1ed, inset -30px -30px #30d1ed;
+    color: #EF27A6;
+    font-weight: 700;
+}
+
+.input-search-Lista::placeholder {
+    color: whitesmoke;
+}
