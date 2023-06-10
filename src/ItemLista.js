@@ -1,14 +1,21 @@
 import './ItemLista.css';
+import { IconDelete } from './iconDelete';
+import { IconSuccess } from './iconSuccess';
+
 
 function ItemLista(props) {
     return (
       <li className={`item-lista ${props.terminado && "item-Lista-terminado"}`}>
+
         <div onClick={props.onToggle}
         className={`contenedor-tilde-lista ${props.terminado && "tilde-animation"}`}>
-          <img className={`${!props.terminado && "ds-none"}`} src={require('./tilde.png')} alt=''/>
+          <IconSuccess onInIt={props.onToggle} mostrar={!props.terminado && "ds-none"}/>
         </div>
+
         <p>{props.texto}</p>
-        <span onClick={props.onDelete}>x</span>
+
+        <IconDelete onInIt={props.onDelete}/>
+
       </li>
     );
   }

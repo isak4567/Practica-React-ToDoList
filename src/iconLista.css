@@ -1,0 +1,40 @@
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* icon Success */
+
+
+/* icon Delete */
+.icon-delete{
+   
+    position: absolute;
+    margin-left: 39.5%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.icon-delete:hover {
+    font-size: 30px;
+    animation: tacho 0.5s forwards 1 linear;
+}
+
+@keyframes tacho {
+    0% {
+        transform: rotate(0deg) translate(0, -10px);
+    }
+    20% {
+        transform: rotate(30deg) translate(0, -10px);
+    }
+    50% {
+        transform: rotate(-30deg) translate(0, -10px);
+    }
+    80% {
+        transform: rotate(30deg) translate(0, -10px);
+    }
+    100% {
+        transform: rotate(0deg) translate(0, -10px);
+    }
+}
