@@ -8,20 +8,23 @@ import { ItemLista } from './ItemLista';
 import './App.css';
 import { CartelAgregarLista } from './CartelAgregarLista';
 
-const defaultLista = [
-  {terminado: true, text: '!!!!!!!!!'},
-  {terminado: false, text: ' text cccccccccccse.'},
-  {terminado: false, text: '!!!!!!!!!!!!!!!!!!!!!!!!'},
-  {terminado: false, text: ' C T.'},
-  {terminado: false, text: ' C GG.'},
-  {terminado: true, text: ' sueñito'},
-  {terminado: false, text: ' ggggg'},
-]
+// const defaultLista = [
+//   {terminado: true, text: '!!!!!!!!!'},
+//   {terminado: false, text: ' text cccccccccccse.'},
+//   {terminado: false, text: '!!!!!!!!!!!!!!!!!!!!!!!!'},
+//   {terminado: false, text: ' C T.'},
+//   {terminado: false, text: ' C GG.'},
+//   {terminado: true, text: ' sueñito'},
+//   {terminado: false, text: ' ggggg'},
+// ];
+
+// localStorage.setItem('lista', JSON.stringify(defaultLista));
 
 function App() {
 
+  const parsedList = JSON.parse(localStorage.getItem('lista'));
   // Lista Principal 
-  const [lista, setlista] = React.useState(defaultLista);
+  const [lista, setlista] = React.useState(parsedList);
 
   const numTareasTerminadas = lista.filter((ele) => !(ele.terminado)).length;
 
@@ -64,7 +67,7 @@ function App() {
         terminado={el.terminado}
         onToggle={()=> toggleTareas(el.text)}
         onDelete={()=> deleteTareas(el.text)}
-        />
+        />;
         })}
       </UlLista>
 
