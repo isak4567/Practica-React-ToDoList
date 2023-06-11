@@ -1,3 +1,6 @@
+
+import React from "react";
+
 // const defaultLista = [
 //   {terminado: true, text: '!!!!!!!!!'},
 //   {terminado: false, text: ' text cccccccccccse.'},
@@ -31,3 +34,5 @@ function useLocaleStorage(nameItem, initialValue) {
     
     return [item, saveItem];
   }
+
+  export {useLocaleStorage};

@@ -1,6 +1,6 @@
 import './ItemLista.css';
-import { IconDelete } from './iconDelete';
-import { IconSuccess } from './iconSuccess';
+import { IconDelete } from '../IconsLista/iconDelete';
+import { IconSuccess } from '../IconsLista/iconSuccess';
 
 
 function ItemLista(props) {

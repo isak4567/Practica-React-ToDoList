@@ -1,5 +1,5 @@
 import React from "react";
-import { IconLista } from "./IconsLista";
+import { IconLista } from "./";
 
 function IconDelete(props) {
     return (
