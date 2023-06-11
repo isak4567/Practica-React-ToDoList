@@ -1,17 +1,18 @@
 
-.icon {
-    width: 20px;
-    height: 20px;
-}
+
 
 /* icon Success */
-
+.icon-success {
+    width: 18px;
+    height: 18px;
+}
 
 /* icon Delete */
 .icon-delete{
-   
+    width: 20px;
+    height: 20px;
     position: absolute;
-    margin-left: 39.5%;
+    margin-left: 40.5%;
     font-size: 20px;
     cursor: pointer;
 }

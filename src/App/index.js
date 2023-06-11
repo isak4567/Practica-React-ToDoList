@@ -6,25 +6,12 @@ import { UlLista } from './UlLista';
 import { CrearButtonLista } from './CrearButtonLista';
 import { ItemLista } from './ItemLista';
 import './App.css';
-import { CartelAgregarLista } from './CartelAgregarLista';
 
-// const defaultLista = [
-//   {terminado: true, text: '!!!!!!!!!'},
-//   {terminado: false, text: ' text cccccccccccse.'},
-//   {terminado: false, text: '!!!!!!!!!!!!!!!!!!!!!!!!'},
-//   {terminado: false, text: ' C T.'},
-//   {terminado: false, text: ' C GG.'},
-//   {terminado: true, text: ' sueñito'},
-//   {terminado: false, text: ' ggggg'},
-// ];
-
-// localStorage.setItem('lista', JSON.stringify(defaultLista));
 
 function App() {
 
-  const parsedList = JSON.parse(localStorage.getItem('lista'));
   // Lista Principal 
-  const [lista, setlista] = React.useState(parsedList);
+  const [lista, saveLSLista] = useLocaleStorage('lista', []);
 
   const numTareasTerminadas = lista.filter((ele) => !(ele.terminado)).length;
 
@@ -40,15 +27,15 @@ function App() {
     const cLista = [...lista];
     let indexToggleLista = cLista.findIndex((el)=> id === el.text);
     cLista[indexToggleLista].terminado = !cLista[indexToggleLista].terminado;
-    setlista(cLista);
+    saveLSLista(cLista);
   }
 
    // Funcion delete de tareas
   const deleteTareas = (id) => {
     const cLista = [...lista];
     let indexToggleLista = cLista.findIndex((el)=> id === el.text);
-    cLista.splice(indexToggleLista, 1)
-    setlista(cLista);
+    cLista.splice(indexToggleLista, 1);
+    saveLSLista(cLista);
   }
 
   
@@ -73,9 +60,9 @@ function App() {
 
       <CrearButtonLista />
 
-      <CartelAgregarLista />
-
-      <a  href="https://icons8.com/icon/83145/marca-de-verificación">Marca de verificación</a> icon by <a href="https://icons8.com">Icons8</a>
+      <div className='linkIcon'>
+        <a href="https://icons8.com/icon/83145/marca-de-verificación">Marca de  verificación</a> icon by <a href="https://icons8.com">Icons8</a>
+      </div>
 
     </>
   );
