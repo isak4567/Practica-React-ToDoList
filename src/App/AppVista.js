@@ -35,7 +35,7 @@ import './AppVista.css';
             </UlLista>
       
             <CrearButtonLista setButonAdd={setButonAdd} bButonAdd={bButonAdd}>
-              <CajaAgregarItemLista agregarTareas={agregarTareas} bButonAdd={bButonAdd} />
+              <CajaAgregarItemLista agregarTareas={agregarTareas} setButonAdd={setButonAdd} bButonAdd={bButonAdd} />
             </CrearButtonLista>
             
             <div className='linkIcon'>

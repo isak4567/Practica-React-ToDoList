@@ -2,12 +2,14 @@ import './CrearButtonLista.css';
 
 function CrearButtonLista(props) {
     return (
-      <div className='crear-button-Lista'
+      <div className= {`crear-button-Lista ${props.bButonAdd? 'abrir-crear-button-Lista' : ''}`}
       onClick={() => { 
-        props.setButonAdd(!props.bButonAdd)
+        if (!props.bButonAdd) {
+          props.setButonAdd(true);
+        }
       }}
       >
-        <p>Crear nueva tarea</p>
+        <p className={`${props.bButonAdd? 'ds-none' : ''}`}>Crear nueva tarea</p>
         {props.children}
       </div>
     );

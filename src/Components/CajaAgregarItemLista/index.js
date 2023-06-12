@@ -8,7 +8,12 @@ function CajaAgregarItemLista(props) {
 
     return (
       <div className={`caja-agregar ${props.bButonAdd? 'entrar-caja' : 'ds-none'}`}>
-        <p>Que quieres agregar?</p>
+        <div className='cont-titulo-caja-agregar'>
+          <p className='' >Que quieres agregar?</p>
+          <p className='' 
+          onClick={() => {props.setButonAdd(false)}}
+           >x</p>
+        </div>
         <input onChange={(event) => {
         setsaddValueList(event.target.value);  
       }} type='text'/>

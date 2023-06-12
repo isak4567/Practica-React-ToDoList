@@ -1,9 +1,10 @@
 .crear-button-Lista {
     background-color: #EF27A6;
-    width: fit-content;
+    width: 13%;
+    height: 60px;
     padding: 16px;
     font-size: 20px;
-    margin: 16px 0;
+    margin: 46px 0;
     margin-left: 43%;
     border-radius: 4px;
     border: 0;
@@ -20,4 +21,22 @@
     box-shadow: inset 1px 1px #30d1ed, 0px 0px #30d1ed, inset -1px -1px #30d1ed, inset 1px 1px #30d1ed;
     color: #30d1ed;
     background-color: #c32188;
+}
+
+.abrir-crear-button-Lista {
+    width: 13%;
+    animation: crecer 0.3s 0.1s 1 forwards linear;
+}
+
+@keyframes crecer {
+    0% {
+        width: 13%;
+        height: 60px;
+        transform: translateX(0);
+    }
+    100% {
+        width: 17%;
+        height: 100px;
+        transform: translateX(-30px);
+    }
 }
