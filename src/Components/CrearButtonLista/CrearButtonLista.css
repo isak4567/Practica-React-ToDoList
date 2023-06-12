@@ -1,5 +1,6 @@
 .crear-button-Lista {
     background-color: #EF27A6;
+    width: fit-content;
     padding: 16px;
     font-size: 20px;
     margin: 16px 0;
@@ -8,6 +9,7 @@
     border: 0;
     color: #21e9fb;
     transition: 0.3s all;
+    cursor: pointer;
 }
 
 .crear-button-Lista:hover {

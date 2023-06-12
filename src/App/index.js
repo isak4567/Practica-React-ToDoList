@@ -18,6 +18,9 @@ function App() {
     return elem.text.toLowerCase().includes(searchValue.toLocaleLowerCase());
   });
 
+  // Valor para hacer aparecer BotonListaAgregar
+  const [ apareceBotonListaAgregar, setApareceBotonListaAgregar] = React.useState(false);
+
   // Funcion toggle de tareas 
   const toggleTareas = (id) => {
     const cLista = [...lista];
@@ -34,6 +37,12 @@ function App() {
     saveLSLista(cLista);
   }
 
+   // Funcion agregador de tareas
+  const agregarTareas = (item) => {
+    const cLista = [...lista];
+    cLista.push(item);
+    saveLSLista(cLista);
+  }
   
   return (
     
@@ -43,6 +52,8 @@ function App() {
     numTareasTerminadas={numTareasTerminadas} 
     searchValue={searchValue} setsSearchValue={setsSearchValue}
     searchList={searchList} toggleTareas={toggleTareas} deleteTareas={deleteTareas}
+    agregarTareas={agregarTareas} 
+    bButonAdd={apareceBotonListaAgregar} setButonAdd={setApareceBotonListaAgregar}
     />
 
     </>

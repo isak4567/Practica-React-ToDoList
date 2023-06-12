@@ -1,8 +1,11 @@
 import React from "react";
 
-import { CabezalLista, 
+import { 
+  CabezalLista, 
   InputSeachLista, UlLista, 
-  CrearButtonLista, ItemLista } 
+  CrearButtonLista, ItemLista,
+  CajaAgregarItemLista
+ } 
 from "../Components";
 
 import './AppVista.css';
@@ -10,7 +13,9 @@ import './AppVista.css';
     function AppVista({
         numTareasTerminadas, 
         searchValue, setsSearchValue,
-        searchList, toggleTareas, deleteTareas
+        searchList, toggleTareas, deleteTareas,
+        agregarTareas,
+        bButonAdd ,setButonAdd
     }) {
         return (
           <>
@@ -29,8 +34,10 @@ import './AppVista.css';
               })}
             </UlLista>
       
-            <CrearButtonLista />
-      
+            <CrearButtonLista setButonAdd={setButonAdd} bButonAdd={bButonAdd}>
+              <CajaAgregarItemLista agregarTareas={agregarTareas} bButonAdd={bButonAdd} />
+            </CrearButtonLista>
+            
             <div className='linkIcon'>
               <a href="https://icons8.com/icon/83145/marca-de-verificación">Marca de  verificación</a> icon by <a href="https://icons8.com">Icons8</a>
             </div>
