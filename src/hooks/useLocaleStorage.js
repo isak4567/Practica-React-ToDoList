@@ -16,23 +16,45 @@ import React from "react";
 // localStorage.removeItem("lista");
 
 function useLocaleStorage(nameItem, initialValue) {
+
+
+  // Lista setStorage
+  const [item, setItem] = React.useState(initialValue);
+
+  const [loading, setloading] = React.useState(true);
+  const [error, seterror] = React.useState(false);
+
+  React.useEffect(()=> {
+
+    setTimeout(() => {  
+      try {
+        const clocalStorage = localStorage.getItem(nameItem);
+      
+        let parsedList = JSON.parse(clocalStorage);
   
-    let parsedList = JSON.parse(localStorage.getItem(nameItem));
+        if (!parsedList) {
+          localStorage.setItem(nameItem, JSON.stringify(initialValue));
+          parsedList = initialValue;
+        }  else {
+          setItem(parsedList);
+          setloading(false);
+        }
   
-    if (!parsedList) {
-      localStorage.setItem(nameItem, JSON.stringify(initialValue));
-      parsedList = [];
-    } 
+      } catch (error) {
+        console.log(error);
+        setloading(false);
+        seterror(true);
+      }
+    }, 2000);
+
+  }, []);
   
-    // Lista setStorage
-    const [item, setItem] = React.useState(parsedList);
-  
-    const saveItem = (copiaItem) => {
-      setItem(copiaItem);
-      localStorage.setItem(nameItem, JSON.stringify(copiaItem));
-    }
-    
-    return [item, saveItem];
+  const saveItem = (copiaItem) => {
+    setItem(copiaItem);
+    localStorage.setItem(nameItem, JSON.stringify(copiaItem));
   }
+    
+  return {item, saveItem, loading, error,};
+}
 
   export {useLocaleStorage};

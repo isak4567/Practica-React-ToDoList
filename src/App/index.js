@@ -7,7 +7,10 @@ import { AppVista } from './AppVista';
 function App() {
 
   // Lista Principal 
-  const [lista, saveLSLista] = useLocaleStorage('lista', []);
+  const {
+    item: lista, saveItem: saveLSLista, 
+    loading, error,
+  } = useLocaleStorage('lista', []);
 
   const numTareasTerminadas = lista.filter((ele) => !(ele.terminado)).length;
 
@@ -49,6 +52,7 @@ function App() {
     <>
 
     <AppVista
+    loading={loading} error={error}
     numTareasTerminadas={numTareasTerminadas} 
     searchValue={searchValue} setsSearchValue={setsSearchValue}
     searchList={searchList} toggleTareas={toggleTareas} deleteTareas={deleteTareas}
