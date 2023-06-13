@@ -1,9 +1,14 @@
+import { compListaContexto } from '..';
+import React from 'react';
 import './CabezalLista.css'
 
-function CabezalLista(props) {
-  if (props.num !== 0) {
+function CabezalLista() {
+
+  const {numTareasTerminadas} = React.useContext(compListaContexto);
+
+  if (numTareasTerminadas !== 0) {
     return (
-      <h1 className="titulo-Lista">Hay que hacer {props.num} cosas</h1>
+      <h1 className="titulo-Lista">Hay que hacer {numTareasTerminadas} cosas</h1>
     );
   } else {
     return (
