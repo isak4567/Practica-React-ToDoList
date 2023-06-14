@@ -45,6 +45,10 @@ function ProviderLista ({children}) {
     cLista.push(item);
     saveLSLista(cLista);
   }
+
+  // Estado Modal
+  const [modalEst, setmodalEst] = React.useState(true);
+  
   
   return (
     <listaContexto.Provider value={{
@@ -53,7 +57,8 @@ function ProviderLista ({children}) {
         searchValue, setsSearchValue,
         searchList, toggleTareas, deleteTareas,
         agregarTareas,
-        bButonAdd ,setbButonAdd
+        bButonAdd ,setbButonAdd,
+        modalEst, setmodalEst
     }}>
         {children}
     </listaContexto.Provider>
