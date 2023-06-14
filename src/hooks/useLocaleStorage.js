@@ -45,7 +45,7 @@ function useLocaleStorage(nameItem, initialValue) {
         setloading(false);
         seterror(true);
       }
-    }, 2000);
+    }, 1000);
 
   }, []);
   

@@ -1,15 +1,18 @@
 import React from 'react';
-import './InputSeachLista.css'
+import './InputSeachLista.css';
+import { compListaContexto } from '..';
+
 
 function InputSeachLista(props) {
 
+  const {searchValue, setsSearchValue } = React.useContext(compListaContexto);
 
     return (
       <input className='input-search-Lista' 
-      type="text" placeholder={props.plc}
-      value={props.searchValue}
+      type="text"
+      value={searchValue}
       onChange={(event) => {
-        props.setsSearchValue(event.target.value);  
+        setsSearchValue(event.target.value);  
       }}
       />
     );

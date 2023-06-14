@@ -1,24 +1,26 @@
 import React from 'react';
 import './CajaAgregarItemLista.css';
+import { compListaContexto } from '..';
 
 
-function CajaAgregarItemLista(props) {
+function CajaAgregarItemLista() {
 
     const [addValueList, setsaddValueList] = React.useState('');
+    const {bButonAdd, setbButonAdd, agregarTareas } = React.useContext(compListaContexto);
 
     return (
-      <div className={`caja-agregar ${props.bButonAdd? 'entrar-caja' : 'ds-none'}`}>
+      <div className={`caja-agregar ${bButonAdd? 'entrar-caja' : 'ds-none'}`}>
         <div className='cont-titulo-caja-agregar'>
           <p className='' >Que quieres agregar?</p>
           <p className='' 
-          onClick={() => {props.setButonAdd(false)}}
+          onClick={() => {setbButonAdd(false)}}
            >x</p>
         </div>
         <input onChange={(event) => {
         setsaddValueList(event.target.value);  
       }} type='text'/>
         <button onClick={ ()=> {
-            props.agregarTareas({terminado: false , text: addValueList});
+            agregarTareas({terminado: false , text: addValueList});
         }}>agregar</button>
       </div>
     );

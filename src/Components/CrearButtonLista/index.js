@@ -1,8 +1,6 @@
 import './CrearButtonLista.css';
 import React from 'react';
-
-
-
+import { compListaContexto } from '..';
 
 
 function CrearButtonLista(props) {
@@ -11,16 +9,17 @@ function CrearButtonLista(props) {
   //   let cont = document.querySelector('.crear-button-Lista').innerHTML;
   //   console.log(cont);
   // }, []);
+  const {bButonAdd, setbButonAdd} = React.useContext(compListaContexto);
   
     return (
-      <div className= {`crear-button-Lista ${props.bButonAdd? 'abrir-crear-button-Lista' : ''}`}
+      <div className= {`crear-button-Lista ${bButonAdd? 'abrir-crear-button-Lista' : ''}`}
       onClick={() => { 
-        if (!props.bButonAdd) {
-          props.setButonAdd(true);
+        if (!bButonAdd) {
+          setbButonAdd(true);
         }
       }}
       >
-        <p className={`${props.bButonAdd? 'ds-none' : ''}`}>Crear nueva tarea</p>
+        <p className={`${bButonAdd? 'ds-none' : ''}`}>Crear nueva tarea</p>
         {props.children}
       </div>
     );

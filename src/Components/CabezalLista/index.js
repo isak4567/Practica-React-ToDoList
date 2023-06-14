@@ -1,6 +1,6 @@
 import { compListaContexto } from '..';
 import React from 'react';
-import './CabezalLista.css'
+import './CabezalLista.css';
 
 function CabezalLista() {
 

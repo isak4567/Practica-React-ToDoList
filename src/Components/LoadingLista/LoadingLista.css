@@ -92,7 +92,7 @@
     border-radius: 8px 0 0 8px;
     background: linear-gradient(211deg, #ec9400, #93ec00, #00ec9b, #0097ec, #5900ec, #ea00ec, #ec0008);
     background-size: 1400% 1400%;
-    animation: 2s lineGrow linear infinite;
+    animation: 1s lineGrow linear infinite;
 }
 
 @keyframes lineGrow {

@@ -1,6 +1,6 @@
 import './LoadingLista.css'
 
-function LoadingLista(props) {
+function LoadingLista() {
 
     return (
       <div className='cont-loading-lista'>
