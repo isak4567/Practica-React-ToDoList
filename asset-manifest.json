@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Practica-React-ToDoList/static/css/main.ce5bc5e0.css",
+    "main.js": "/Practica-React-ToDoList/static/js/main.bb21f1ff.js",
+    "static/media/gSuccess.svg": "/Practica-React-ToDoList/static/media/gSuccess.a733955cea81844951adcdc85dd08142.svg",
+    "index.html": "/Practica-React-ToDoList/index.html",
+    "static/media/bDelete.svg": "/Practica-React-ToDoList/static/media/bDelete.b7f5cbe1d6122519a25ad5b0b019d495.svg",
+    "main.ce5bc5e0.css.map": "/Practica-React-ToDoList/static/css/main.ce5bc5e0.css.map",
+    "main.bb21f1ff.js.map": "/Practica-React-ToDoList/static/js/main.bb21f1ff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ce5bc5e0.css",
+    "static/js/main.bb21f1ff.js"
+  ]
+}
