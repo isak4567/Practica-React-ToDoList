@@ -55,7 +55,7 @@ function AppVista() {
         <a href="https://icons8.com/icon/83145/marca-de-verificación">Marca de  verificación</a> icon by <a href="https://icons8.com">Icons8</a>
       </div>
 
-      {modalEst && (<Modal>AAAAAAAAhhhhhh!!!!!</Modal>)} 
+      {modalEst && (<Modal></Modal>)} 
     </>
   );
 }

@@ -35,6 +35,7 @@ function useLocaleStorage(nameItem, initialValue) {
         if (!parsedList) {
           localStorage.setItem(nameItem, JSON.stringify(initialValue));
           parsedList = initialValue;
+          setloading(false);
         }  else {
           setItem(parsedList);
           setloading(false);

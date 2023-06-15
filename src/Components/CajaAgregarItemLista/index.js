@@ -12,13 +12,11 @@ function CajaAgregarItemLista() {
       <div className={`caja-agregar ${bButonAdd? 'entrar-caja' : 'ds-none'}`}>
         <div className='cont-titulo-caja-agregar'>
           <p className='' >Que quieres agregar?</p>
-          <p className='' 
-          onClick={() => {setbButonAdd(false)}}
-           >x</p>
+          <p className='' onClick={() => {setbButonAdd(false)}}>x</p>
         </div>
         <input onChange={(event) => {
         setsaddValueList(event.target.value);  
-      }} type='text'/>
+        }} type='text'/>
         <button onClick={ ()=> {
             agregarTareas({terminado: false , text: addValueList});
         }}>agregar</button>
